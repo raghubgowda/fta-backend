@@ -8,6 +8,7 @@
 * 	[MongoDB](https://www.mongodb.com/) - MongoDB is a document database with the scalability and flexibility that you want with the querying and indexing that you need
 * 	[Lombok](https://projectlombok.org/) - Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.
 
+
 ## External Tools Used
 
 * [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
@@ -18,6 +19,8 @@ For building and running the application you need:
 
 - [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 - [Maven 4](https://maven.apache.org)
+- [Docker](https://www.docker.com/)
+- [Docker-compose](https://docs.docker.com/compose/)
 
 ## Running the application locally
 
@@ -36,10 +39,10 @@ One way is to execute the `main` method in the `com.raghu.fta.FeatureToggleAppli
 Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
 
 ```shell
-mvn install
-mvn spring-boot:run
+mvn package
+docker-compose up
 ```
-The application uses the port: 8081
+The application uses the port: 8080
 
 ## Documentation
 
