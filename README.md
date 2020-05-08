@@ -33,6 +33,7 @@ One way is to execute the `main` method in the `com.raghu.fta.FeatureToggleAppli
 - Run the below command
 
 ```shell
+mvn install
 mvn package
 docker-compose up
 ```
