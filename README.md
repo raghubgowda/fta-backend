@@ -42,7 +42,7 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 mvn package
 docker-compose up
 ```
-The application uses the port: 8081
+The application uses the port: 8080
 
 ## Documentation
 
