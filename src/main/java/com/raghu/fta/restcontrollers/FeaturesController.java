@@ -12,7 +12,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/features")
-@CrossOrigin(origins = "http://localhost:4200")
 public class FeaturesController {
 
     private FeatureService featureService;
@@ -24,7 +23,7 @@ public class FeaturesController {
     ResponseEntity<?> getFeatures(){
         logger.debug("Fetching all the features");
 
-        List<Feature> features = featureService.getFeaturesByFeatureNames();
+        List<Feature> features = featureService.getAllFeatures();
 
         logger.debug("Fetched all the features");
 

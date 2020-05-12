@@ -20,7 +20,7 @@ public class FeatureService {
         this.featuresRepo = featuresRepo;
     }
     
-    public List<Feature> getFeaturesByFeatureNames() {
+    public List<Feature> getAllFeatures() {
         List<Feature> features;
         try{
             features = featuresRepo.findAll();
