@@ -13,7 +13,7 @@ public class FeatureToggleApplication {
 		SpringApplication.run(FeatureToggleApplication.class, args);
 	}
 
-	@Bean
+	@Bean(name = "test", value = "")
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {
 			@Override
