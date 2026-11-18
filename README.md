@@ -11,34 +11,38 @@
 
 ## External Tools Used
 
-* [Postman](https://www.getpostman.com/) - API Development Environment (Testing Docmentation)
+* [Postman](https://www.getpostman.com/) - API Development Environment (Testing Documentation)
 
 ## Requirements
 
 For building and running the application you need:
 
 - [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-- [Maven 4](https://maven.apache.org)
+- [Maven](https://maven.apache.org) (or use the included Maven Wrapper)
 - [Docker](https://www.docker.com/)
-- [Docker-compose](https://docs.docker.com/compose/)
+- [Docker Compose](https://docs.docker.com/compose/)
 
 ## Running unit tests and checking coverage locally
 
-From the repository root (the directory containing `pom.xml`), run the tests, generate the JaCoCo report, and enforce the 90% instruction coverage threshold:
+From the repository root (the directory containing `pom.xml`), run:
 
 ```shell
-./mvnw clean verify
+./mvnw clean test jacoco:report
 ```
 
 On Windows, run:
 
 ```shell
-mvnw.cmd clean verify
+mvnw.cmd clean test jacoco:report
 ```
 
-If Maven is installed globally, use `mvn clean verify` instead. Open `target/site/jacoco/index.html` in a browser to review the coverage report. The build fails if instruction coverage is below 90%. JaCoCo 0.8.12 requires Java 8 or later, matching this project's JDK 8 requirement ([release notes](https://www.jacoco.org/jacoco/trunk/doc/changes.html)).
+If Maven is installed globally, use:
 
-> **Note:** The Docker image plugin is bound to Maven's `package` phase, which runs during `verify`. A Docker daemon must be available when running this command.
+```shell
+mvn clean test jacoco:report
+```
+
+This runs unit tests and generates the JaCoCo report without invoking the Docker image build bound to the `package` phase. Open `target/site/jacoco/index.html` in a browser to review coverage. The build enforces a minimum 90% instruction coverage threshold; it fails if coverage is below 90%.
 
 ## Running the application locally
 
