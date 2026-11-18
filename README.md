@@ -22,6 +22,24 @@ For building and running the application you need:
 - [Docker](https://www.docker.com/)
 - [Docker-compose](https://docs.docker.com/compose/)
 
+## Running unit tests and checking coverage locally
+
+From the repository root (the directory containing `pom.xml`), run the tests, generate the JaCoCo report, and enforce the 90% instruction coverage threshold:
+
+```shell
+./mvnw clean verify
+```
+
+On Windows, run:
+
+```shell
+mvnw.cmd clean verify
+```
+
+If Maven is installed globally, use `mvn clean verify` instead. Open `target/site/jacoco/index.html` in a browser to review the coverage report. The build fails if instruction coverage is below 90%. JaCoCo 0.8.12 requires Java 8 or later, matching this project's JDK 8 requirement ([release notes](https://www.jacoco.org/jacoco/trunk/doc/changes.html)).
+
+> **Note:** The Docker image plugin is bound to Maven's `package` phase, which runs during `verify`. A Docker daemon must be available when running this command.
+
 ## Running the application locally
 
 There are several ways to run a Spring Boot application on your local machine. 
